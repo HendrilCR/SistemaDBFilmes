@@ -12,10 +12,21 @@
 
     <p th:text="${texto}"></p>
 
-    <tr th:each="filme: ${filmes}">
-        <td th:text="${filme.id}" />
-        <td th:text="${filme.nome}" />
-    </tr>
-
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>NOME</th>
+        </tr>
+        <tr th:each="filme: ${filmes}">
+            <td th:text="${filme.id}"></td>
+            <td th:text="${filme.nome}"></td>
+            <td>
+                <form th:action="@{/getFilme}" method="GET">
+                    <input type="hidden" name="id" th:value="${filme.id}">
+                    <button type="submit">Abrir Filme</button>
+                </form>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

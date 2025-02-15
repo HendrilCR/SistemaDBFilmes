@@ -11,9 +11,11 @@
     <p>O site de avaliação de filmes baseados em opiniões da comunidade!</p>
 
     <p th:text="${texto}"></p>
-    <p th:text="${filme.nome}"></p>
 
-    
+    <tr th:each="filme: ${filmes}">
+        <td th:text="${filme.id}" />
+        <td th:text="${filme.nome}" />
+    </tr>
 
 </body>
 </html>

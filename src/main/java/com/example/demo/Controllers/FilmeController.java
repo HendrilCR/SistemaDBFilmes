@@ -25,10 +25,9 @@ public class FilmeController{
         System.out.println(filmes.get(0).getNome());
 
         String texto = "MANOO";
-        Filme filme = filmes.get(0);
 
         model.addAttribute("texto", texto);
-        model.addAttribute("filme", filme);
+        model.addAttribute("filmes",filmes);
         return "inicio";
     }
 }

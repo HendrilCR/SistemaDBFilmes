@@ -1,8 +1,9 @@
 drop table if exists filmes;
 drop table if exists usuarios;
+drop table if exists avaliacoes;
 
 create table usuarios(
-	id integer primary key,
+	id serial primary key,
 	nome varchar(40),
 	usuario varchar(40),
 	email varchar(40),
@@ -19,15 +20,29 @@ create table filmes(
 	media_estrelas float(5)
 );
 
-insert into usuarios values (0,'Marcelo Correia','marcelo','mcorreia@hotmail.com','12345678');
+create table avaliacoes(
+	id serial primary key,
+	idUsuario integer,
+	idFilme integer,
+	comentario varchar(255),
+	estrelas integer
+);
+
+insert into usuarios (nome, usuario,email,senha) values 
+		('Marcelo Correia','marcelo','mcorreia@hotmail.com','12345678'),
+		('Amanda Louza','amanda','amouza@hotmail.com','23213131');
 
 insert into filmes (nome,classificacao_indicativa,genero,ano_lancamento,media_estrelas) values 
 		('Detetive Pikachu','13+','Aventura',2020,0),
 		('Motoqueiro Fantasma','16+','Ação',2015,0);
 
+insert into avaliacoes (idUsuario, idFilme, comentario, estrelas) values 
+		(0,0,'PIKACHU AAAAAAAAAAAAAA',5),
+		(1,0,'Filme poggers',5);
 
 select * from usuarios;
 select * from filmes;
+select * from avaliacoes;
 
 
 

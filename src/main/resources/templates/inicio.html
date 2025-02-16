@@ -21,7 +21,7 @@
             <td th:text="${filme.id}"></td>
             <td th:text="${filme.nome}"></td>
             <td>
-                <form th:action="@{/getFilme}" method="GET">
+                <form th:action="@{/verFilme}" method="GET">
                     <input type="hidden" name="id" th:value="${filme.id}">
                     <button type="submit">Abrir Filme</button>
                 </form>

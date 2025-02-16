@@ -32,12 +32,13 @@ public class FilmeController{
         return "inicio";
     }
 
-    @GetMapping("/getFilme")
-    public String getFilmeById(@RequestParam int id) {
+    @GetMapping("/verFilme")
+    public String verFilme(@RequestParam int id, Model model) {
         var filmes = (List<Filme>) filmeService.findAll();
-        
-        System.out.println("ID: " + id);
-        System.out.println(filmes.get(id-1).getNome());
+        Filme filme = filmes.get(id-1);
+
+        model.addAttribute("filme", filme);
+
         return "page-filme";
     }
 }

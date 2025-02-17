@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avaliacoes</title>
+    <title>DBFilmes</title>
     <link th:href="@{style.css}" rel="stylesheet" />
 </head>
 <body>
@@ -15,8 +15,8 @@
     <h3>Comentários</h3>
 
     <div th:each="avaliacao: ${avaliacoes}" class="avaliacao">
-        <p th:text="${avaliacao.idusuario}"></p>
-        <p th:text="${avaliacao.idfilme}"></p>
+        <p th:text="${avaliacao.idUsuario}"></p>
+        <p th:text="${avaliacao.idFilme}"></p>
         <p th:text="${avaliacao.estrelas}"></p>
         <p th:text="${avaliacao.comentario}"></p>
     </div>

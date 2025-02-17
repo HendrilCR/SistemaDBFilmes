@@ -18,5 +18,8 @@ public class AvaliacaoService {
         return (List<Avaliacao>) repository.findAll();
     }
 
+    public List<Avaliacao> findByIdFilme(int idFilme){
+        return (List<Avaliacao>) repository.findByIdFilme(idFilme);
+    }
     
 }

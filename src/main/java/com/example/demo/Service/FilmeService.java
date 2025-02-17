@@ -1,6 +1,8 @@
 package com.example.demo.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 import com.example.demo.Models.Filme;
 import com.example.demo.Repository.FilmeRepository;
 
@@ -16,5 +18,9 @@ public class FilmeService {
 
     public List<Filme> findAll(){
         return (List<Filme>) repository.findAll();
+    }
+
+    public Filme getById(int id) {
+        return repository.getById(id);
     }
 }

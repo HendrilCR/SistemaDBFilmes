@@ -14,6 +14,7 @@
 
     <h3>Escreva uma avaliação!</h3>
     <form th:action="@{/avaliacaoSave}" th:object="${avaliacao}" method="post">
+        <input type="hidden" th:field="*{idFilme}" th:value="${filme.id}"/>
         <label for="comment">Seu comentario</label>
         <br>
         <input type="text" id="comment" th:field="*{comentario}">

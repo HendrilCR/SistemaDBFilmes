@@ -31,16 +31,18 @@ public class FilmeController{
 
     @GetMapping("/verFilme")
     public String verFilme(@RequestParam int id, Model model) {
-        var filmes = filmeService.findAll();
-        Filme filme = filmes.get(id-1);
+        Filme filme = filmeService.getById(id);
 
         //Puxa apenas as avaliações do id do filme atual
-        var avaliacoes = avaliacaoService.findByIdFilme(filme.getId()-1);
+        var avaliacoes = avaliacaoService.findByIdFilme(id);
 
         model.addAttribute("filme", filme);
         model.addAttribute("avaliacoes", avaliacoes);
 
-        model.addAttribute("avaliacao", new Avaliacao());
+        Avaliacao avaliacao = new Avaliacao();
+        avaliacao.setIdFilme(filme.getId());
+
+        model.addAttribute("avaliacao", avaliacao);
 
         return "page-filme";
     }

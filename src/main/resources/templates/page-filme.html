@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avaliacoes</title>
+    <link th:href="@{style.css}" rel="stylesheet" />
 </head>
 <body>
     <h1>Avaliacoes</h1>
     <p th:text="${filme.id}"></p>
     <p th:text="${filme.nome}"></p>
 
+
+    <h3>Comentários</h3>
+
+    <div th:each="avaliacao: ${avaliacoes}" class="avaliacao">
+        <p th:text="${avaliacao.idusuario}"></p>
+        <p th:text="${avaliacao.idfilme}"></p>
+        <p th:text="${avaliacao.estrelas}"></p>
+        <p th:text="${avaliacao.comentario}"></p>
+    </div>
     
 </body>
 </html>

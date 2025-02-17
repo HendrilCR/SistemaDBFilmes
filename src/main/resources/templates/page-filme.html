@@ -10,9 +10,29 @@
     <h1>Avaliacoes</h1>
     <p th:text="${filme.id}"></p>
     <p th:text="${filme.nome}"></p>
+    <img th:src="${filme.link_imagem}">
 
+    <h3>Escreva uma avaliação!</h3>
+    <form th:action="@{/avaliacaoSave}" th:object="${avaliacao}" method="post">
+        <label for="comment">Seu comentario</label>
+        <br>
+        <input type="text" id="comment" th:field="*{comentario}">
+        <br>
+    
+        <label for="estrelas">Avaliação (estrelas)</label>
+        <br>
+        <select id="estrelas" th:field="*{estrelas}">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
 
-    <h3>Comentários</h3>
+    <h3>Comentários da comunidade</h3>
 
     <div th:each="avaliacao: ${avaliacoes}" class="avaliacao">
         <p th:text="${avaliacao.idUsuario}"></p>

@@ -4,12 +4,14 @@ import java.util.List;
 import com.example.demo.Models.Avaliacao;
 import com.example.demo.Repository.AvaliacaoRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class AvaliacaoService {
     private final AvaliacaoRepository repository;
 
+    @Autowired
     public AvaliacaoService(AvaliacaoRepository repository){
             this.repository = repository;
     }
@@ -20,6 +22,10 @@ public class AvaliacaoService {
 
     public List<Avaliacao> findByIdFilme(int idFilme){
         return (List<Avaliacao>) repository.findByIdFilme(idFilme);
+    }
+
+    public void avaliacaoSave(Avaliacao avaliacao){
+        repository.save(avaliacao);
     }
     
 }

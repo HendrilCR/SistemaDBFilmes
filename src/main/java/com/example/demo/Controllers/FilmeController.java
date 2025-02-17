@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.Models.Avaliacao;
 import com.example.demo.Models.Filme;
 import com.example.demo.Service.AvaliacaoService;
 import com.example.demo.Service.FilmeService;
@@ -33,11 +34,13 @@ public class FilmeController{
         var filmes = filmeService.findAll();
         Filme filme = filmes.get(id-1);
 
-        //Puxa apenas as avaliacções do id do filme atual
+        //Puxa apenas as avaliações do id do filme atual
         var avaliacoes = avaliacaoService.findByIdFilme(filme.getId()-1);
 
         model.addAttribute("filme", filme);
         model.addAttribute("avaliacoes", avaliacoes);
+
+        model.addAttribute("avaliacao", new Avaliacao());
 
         return "page-filme";
     }

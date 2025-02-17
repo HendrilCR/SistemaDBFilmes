@@ -15,7 +15,14 @@ public class Filme {
     private String genero;
     private int ano_lancamento;
     private double media_estrelas;
+    private String link_imagem;
     
+    public String getLink_imagem() {
+        return link_imagem;
+    }
+    public void setLink_imagem(String link_imagem) {
+        this.link_imagem = link_imagem;
+    }
     public int getId() {
         return id;
     }

@@ -17,7 +17,8 @@ create table filmes(
 	classificacao_indicativa varchar(5),
 	genero varchar(15),
 	ano_lancamento integer,
-	media_estrelas float(5)
+	media_estrelas float(5),
+	link_imagem varchar(255)
 );
 
 create table avaliacoes(
@@ -32,9 +33,9 @@ insert into usuarios (nome, usuario,email,senha) values
 		('Marcelo Correia','marcelo','mcorreia@hotmail.com','12345678'),
 		('Amanda Louza','amanda','amouza@hotmail.com','23213131');
 
-insert into filmes (nome,classificacao_indicativa,genero,ano_lancamento,media_estrelas) values 
-		('Detetive Pikachu','13+','Aventura',2020,0),
-		('Motoqueiro Fantasma','16+','Ação',2015,0);
+insert into filmes (nome,classificacao_indicativa,genero,ano_lancamento,media_estrelas,link_imagem) values 
+		('Detetive Pikachu','13+','Aventura',2020,0,'images/coverDetetivePikachu.jpg'),
+		('Motoqueiro Fantasma','13+','Ação',2007,0,'images/coverMotoqueiroFantasma.jpg');
 
 insert into avaliacoes (idUsuario, idFilme, comentario, estrelas) values 
 		(0,0,'PIKACHU AAAAAAAAAAAAAA',5),

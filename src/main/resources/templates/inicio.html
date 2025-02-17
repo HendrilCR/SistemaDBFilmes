@@ -13,21 +13,18 @@
 
     <p th:text="${texto}"></p>
 
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>NOME</th>
-        </tr>
-        <tr th:each="filme: ${filmes}">
-            <td th:text="${filme.id}"></td>
-            <td th:text="${filme.nome}"></td>
-            <td>
-                <form th:action="@{/verFilme}" method="GET">
-                    <input type="hidden" name="id" th:value="${filme.id}">
-                    <button type="submit">Abrir Filme</button>
-                </form>
-            </td>
-        </tr>
-    </table>
+    <div class="filmeContainer" th:each="filme: ${filmes}">
+        <p th:text="${filme.id}"></p>
+        <p th:text="${filme.nome}"></p>
+
+        <img th:src="${filme.link_imagem}">
+
+        <p th:text="${filme.link_imagem}"></p>
+        <form th:action="@{/verFilme}" method="GET">
+            <input type="hidden" name="id" th:value="${filme.id}">
+            <button type="submit">Abrir Filme</button>
+        </form>
+    </div>
+
 </body>
 </html>

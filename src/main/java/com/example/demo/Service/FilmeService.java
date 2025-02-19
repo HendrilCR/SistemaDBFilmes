@@ -1,7 +1,6 @@
 package com.example.demo.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.example.demo.Models.Filme;
 import com.example.demo.Repository.FilmeRepository;
